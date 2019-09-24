@@ -10,16 +10,22 @@
   </head>
   <body>
     <div class="page-header">
+
+      <!--      
+		{% if user.is_authenticated %}
+		<a href="{% url 'post_list' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+		{% endif %}
+		-->
+      
       <h1><a href="/">待ち合わせアプリ</a></h1>
     </div>
-
-    <h1>路線選択</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
-      <!-- formの内容をpタグで囲って表示。段落として表示。 -->
+    <div class="conditional branch">
       <h4>
-	{{ form.as_p }}
-	<button type="submit" class="save btn btn-default"><a href="{% url 'post_list' %}">Save</a></button>
-      </h4>
-    </form>
+	<button type="submit" class="ok"><a href="{% url 'exit' %}">待ち合わせ</a></button><br><br>
+	<button type="submit" class="ok"><a href="{% url 'transfer' %}">乗り換え</a></button><br><br>
+    </div>
   </body>
 </html>
+
+
+

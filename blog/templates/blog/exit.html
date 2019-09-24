@@ -1,0 +1,68 @@
+{% load static %}
+
+<html>
+  <head>
+    <title>待ち合わせアプリ</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="page-header">
+      <h1><a href="/">待ち合わせアプリ</a></h1>
+    </div>
+
+    <form>
+      <h3>目的地の有無</h3>
+      <h4>
+	<br>
+	<input type="radio" name="des" value="表示" onclick="hyoji()">あり
+	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+	<input type="radio" name="des" value="非表示" onclick="hihyoji()">なし
+      </h4>
+    </form>
+    
+    <div id="message"><h3>ランドマークor出口を選択してください。</h3>
+      <h4>
+	<br>
+	<input type="radio" name="land" value="des">ランドマーク
+	&emsp;&emsp;&emsp;
+	<input type="radio" name="land" value="exit">出口<br><br>
+	<select name="destination">
+	  <option value="one">あ</option>
+	  <option value="two">い</option>
+	  <option value="three">う</option>
+	  <option value="four">え</option>
+	  <option value="five">お</option>
+	</select>
+	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+	<select name="exit">
+	  <option value="one">あ</option>
+	  <option value="two">い</option>
+	  <option value="three">う</option>
+	  <option value="four">え</option>
+	  <option value="five">お</option>
+	</select>
+	<br><br>
+     </h4>
+    </div>
+    
+    <script>
+      function hyoji() {
+      document.getElementById("message").style.display="block";
+      }
+
+      function hihyoji() {
+      document.getElementById("message").style.display="none";
+      }
+    </script>
+    
+    <button type="submit" class="ok"><a href="{% url 'post_list' %}">OK</a></button>
+  </body>
+</html>
+
+
+
+
+

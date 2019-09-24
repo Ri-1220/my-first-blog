@@ -1,4 +1,5 @@
 {% load static %}
+
 <html>
   <head>
     <title>待ち合わせアプリ</title>
@@ -14,21 +15,16 @@
       {% endif %}
       <h1><a href="/">待ち合わせアプリ</a></h1>
     </div>
+
+
     <div class="content container">
-      <h4><input type="checkbox" name="train" value="marunouti">東京メトロ丸ノ内線<br><br>
-      <input type="checkbox" name="train" value="hukutosin">東京メトロ副都心線<br><br>
-      <input type="checkbox" name="train" value="sinjuku">都営新宿線<br><br>
-      <input type="checkbox" name="train" value="ooedo">都営大江戸線<br><br>
-      <input type="checkbox" name="train" value="yamanote">JR山手線<br><br>
-     <input type="checkbox" name="train" value="soumu">JR総武線<br><br>
-      <input type="checkbox" name="train" value="saikyou">JR埼京線<br><br>
-      <input type="checkbox" name="train" value="tyuou">JR中央線<br><br>
-      <input type="checkbox" name="train" value="tyuouhon">JR中央本線<br><br>
-      <input type="checkbox" name="train" value="syounansinjuku">湘南新宿ライン<br><br>
-      <input type="checkbox" name="train" value="keiou">京王線<br><br>
-      <input type="checkbox" name="train" value="keiousin">京王新線<br><br>
-      <input type="checkbox" name="train" value="odakyuuodawara">小田急小田原線<br><br>
-      <input type="checkbox" name="train" value="seibusinjuku">西武新宿線<br><br></h4>
+      <div class="row">
+	<div class="col-md-8">
+	  {% block content %}
+	  {% endblock %}
+	</div>
+      </div>
     </div>
+    
   </body>
 </html>
